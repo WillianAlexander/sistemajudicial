@@ -1,5 +1,4 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
-import * as http from 'http';
 import { JwtService } from '@nestjs/jwt';
 import axios from 'axios';
 
@@ -15,9 +14,9 @@ export class AuthService {
   }) {
     const payload = {
       usuario: user.usuario,
-      nombres: user.nombres, // Nombre completo del usuario
-      correo: user.correo, // Correo electrónico
-      identificacion: user.identificacion, // Identificación del usuario
+      nombres: user.nombres,
+      correo: user.correo,
+      identificacion: user.identificacion,
     };
 
     if (!process.env.JWT_SECRET) {
